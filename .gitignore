@@ -1,0 +1,11 @@
+# Ignore everything by default
+*
+
+# Allow these files
+!.gitignore
+!UsedCarPrice.ipynb
+!README.md
+!requirements.txt
+!app.py
+!style.css
+!Procfile
