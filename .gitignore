@@ -5,6 +5,8 @@
 !README.md
 !requirements.txt
 !app.py
-!style.css
 !Dockerfile
-!index.html
+!model_columns.pkl
+
+!static/**
+!templates/**
