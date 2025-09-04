@@ -10,6 +10,7 @@
 
 !static
 !templates
+!static/img
 
 !static/img/wallpaper.png
 !static/style.css
