@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- mobile-friendly -->
+    <title>Used Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Used Car Price Prediction</h1>
+
+    <form action="/predict" method="post">
+        <label>Odometer (miles):</label>
+        <input type="text" name="odometer" required>
+
+        <label>Vehicle Age (years):</label>
+        <input type="text" name="vehicle_age" required>
+
+        <label>Manufacturer:</label>
+        <select name="manufacturer">
+            <option value="gmc">GMC</option>
+            <option value="chevrolet">Chevrolet</option>
+            <option value="toyota">Toyota</option>
+            <option value="ford">Ford</option>
+            <option value="jeep">Jeep</option>
+            <option value="nissan">Nissan</option>
+            <option value="ram">Ram</option>
+            <option value="mazda">Mazda</option>
+            <option value="cadillac">Cadillac</option>
+            <option value="honda">Honda</option>
+            <option value="dodge">Dodge</option>
+            <option value="lexus">Lexus</option>
+            <option value="jaguar">Jaguar</option>
+            <option value="buick">Buick</option>
+            <option value="chrysler">Chrysler</option>
+            <option value="volvo">Volvo</option>
+            <option value="audi">Audi</option>
+            <option value="infiniti">Infiniti</option>
+            <option value="lincoln">Lincoln</option>
+            <option value="alfa-romeo">Alfa-Romeo</option>
+            <option value="subaru">Subaru</option>
+            <option value="acura">Acura</option>
+            <option value="hyundai">Hyundai</option>
+            <option value="mercedes-benz">Mercedes-Benz</option>
+            <option value="bmw">BMW</option>
+            <option value="mitsubishi">Mitsubishi</option>
+            <option value="volkswagen">Volkswagen</option>
+            <option value="porsche">Porsche</option>
+            <option value="kia">Kia</option>
+            <option value="rover">Rover</option>
+            <option value="ferrari">Ferrari</option>
+            <option value="mini">Mini</option>
+            <option value="pontiac">Pontiac</option>
+            <option value="fiat">Fiat</option>
+            <option value="tesla">Tesla</option>
+            <option value="saturn">Saturn</option>
+            <option value="mercury">Mercury</option>
+            <option value="datsun">Datsun</option>
+            <option value="aston-martin">Aston-Martin</option>
+            <option value="land rover">Land Rover</option>
+            <option value="morgan">Morgan</option>
+        </select>
+
+        <label>Condition:</label>
+        <select name="condition">
+            <option value="good">Good</option>
+            <option value="excellent">Excellent</option>
+            <option value="fair">Fair</option>
+            <option value="like new">Like New</option>
+            <option value="new">New</option>
+            <option value="salvage">Salvage</option>
+        </select>
+
+        <label>Fuel Type:</label>
+        <select name="fuel">
+            <option value="gas">Gas</option>
+            <option value="other">Other</option>
+            <option value="diesel">Diesel</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="electric">Electric</option>
+        </select>
+
+        <label>Transmission:</label>
+        <select name="transmission">
+            <option value="automatic">Automatic</option>
+            <option value="manual">Manual</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label>Drive:</label>
+        <select name="drive">
+            <option value="fwd">FWD</option>
+            <option value="4wd">4WD</option>
+            <option value="rwd">RWD</option>
+        </select>
+
+        <label>Paint Color:</label>
+        <select name="paint_color">
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="red">Red</option>
+            <option value="black">Black</option>
+            <option value="silver">Silver</option>
+            <option value="grey">Grey</option>
+            <option value="brown">Brown</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="green">Green</option>
+            <option value="custom">Custom</option>
+            <option value="purple">Purple</option>
+        </select>
+
+        <label>State:</label>
+        <select name="state">
+            <option value="az">AZ</option><option value="ar">AR</option><option value="fl">FL</option>
+            <option value="ma">MA</option><option value="nc">NC</option><option value="ny">NY</option>
+            <option value="or">OR</option><option value="pa">PA</option><option value="tx">TX</option>
+            <option value="wa">WA</option><option value="wi">WI</option><option value="al">AL</option>
+            <option value="ak">AK</option><option value="ca">CA</option><option value="co">CO</option>
+            <option value="ct">CT</option><option value="dc">DC</option><option value="de">DE</option>
+            <option value="ga">GA</option><option value="hi">HI</option><option value="id">ID</option>
+            <option value="il">IL</option><option value="in">IN</option><option value="ia">IA</option>
+            <option value="ks">KS</option><option value="ky">KY</option><option value="la">LA</option>
+            <option value="me">ME</option><option value="md">MD</option><option value="mi">MI</option>
+            <option value="mn">MN</option><option value="ms">MS</option><option value="mo">MO</option>
+            <option value="mt">MT</option><option value="ne">NE</option><option value="nv">NV</option>
+            <option value="nj">NJ</option><option value="nm">NM</option><option value="nh">NH</option>
+            <option value="nd">ND</option><option value="oh">OH</option><option value="ok">OK</option>
+            <option value="ri">RI</option><option value="sc">SC</option><option value="sd">SD</option>
+            <option value="tn">TN</option><option value="ut">UT</option><option value="vt">VT</option>
+            <option value="va">VA</option><option value="wv">WV</option><option value="wy">WY</option>
+        </select>
+
+        <input class="submit-btn" type="submit" value="Predict Price">
+    </form>
+
+    <!-- Prediction Modal -->
+    <div id="resultModal" class="modal-backdrop {% if prediction_text %}show{% endif %}">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 id="modalTitle">Predicted Price</h3>
+        <p><strong>{{ prediction_text }}</strong></p>
+        <button class="ok-btn">OK</button>
+      </div>
+    </div>
+
+    <!-- Tiny script to handle open/close -->
+    <script>
+      (function () {
+        const modal = document.getElementById('resultModal');
+        if (!modal) return;
+
+        const close = () => modal.classList.remove('show');
+
+        // Close on X, OK, ESC, or clicking outside the box
+        modal.querySelector('.close-btn')?.addEventListener('click', close);
+        modal.querySelector('.ok-btn')?.addEventListener('click', close);
+        modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+        // Auto-scroll up when showing result
+        {% if prediction_text %}
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        {% endif %}
+      })();
+    </script>
+</body>
+</html>

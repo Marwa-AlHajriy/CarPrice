@@ -1,0 +1,125 @@
+/* Using Canva created wallpaper */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/static/img/wallpaper.png') center/cover fixed no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);  
+    pointer-events: none;
+    z-index: -1;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 32px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+h2 {
+    margin-top: 20px;
+    display: inline-block;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+form {
+    background: rgba(0, 0, 0, 0.6);
+    width: min(700px, 90%);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;                         /* fully see-through */
+    border: 2px solid rgba(255, 255, 255, 0.6);      /* light border */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 0.1);            /* faint glow on hover */
+    border-color: #fff;
+}
+
+
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: none;                 
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;                
+}
+.modal-backdrop.show { display: flex; }
+
+.modal {
+  position: relative;  
+  background: rgba(0,0,0,0.85);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  width: min(420px, 90vw);
+  border-radius: 12px;
+  padding: 24px 22px;
+  text-align: center;
+  box-shadow: 0 18px 48px rgba(0,0,0,0.5);
+}
+
+.modal h3 { margin: 0 0 10px; }
+.modal p { margin: 0 0 16px; font-size: 18px; }
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px; right: 14px;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal .ok-btn {
+  padding: 10px 18px;
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal .ok-btn:hover { background: rgba(255,255,255,0.1); }
