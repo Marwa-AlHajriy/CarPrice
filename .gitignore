@@ -8,5 +8,6 @@
 !Dockerfile
 !model_columns.pkl
 
-!static/**
-!templates/**
+!static/img/wallpaper.png
+!static/style.css
+!templates/index.html
