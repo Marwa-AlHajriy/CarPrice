@@ -134,7 +134,6 @@
         <input class="submit-btn" type="submit" value="Predict Price">
     </form>
 
-    <!-- Prediction Modal -->
     <div id="resultModal" class="modal-backdrop {% if prediction_text %}show{% endif %}">
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button class="close-btn" aria-label="Close">&times;</button>
@@ -144,7 +143,6 @@
       </div>
     </div>
 
-    <!-- Tiny script to handle open/close -->
     <script>
       (function () {
         const modal = document.getElementById('resultModal');
@@ -152,13 +150,11 @@
 
         const close = () => modal.classList.remove('show');
 
-        // Close on X, OK, ESC, or clicking outside the box
         modal.querySelector('.close-btn')?.addEventListener('click', close);
         modal.querySelector('.ok-btn')?.addEventListener('click', close);
         modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 
-        // Auto-scroll up when showing result
         {% if prediction_text %}
           window.scrollTo({ top: 0, behavior: 'auto' });
         {% endif %}

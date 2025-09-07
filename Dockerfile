@@ -3,7 +3,7 @@ COPY . /app
 WORKDIR /app
 RUN pip install -r requirements.txt
 
-ARG MODEL_URL
+ARG MODEL_URL=https://github.com/Marwa-AlHajriy/CarPrice/releases/download/v1.0/used_car_price_model.pkl
 
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/* \
  && echo "Downloading model files..." \
