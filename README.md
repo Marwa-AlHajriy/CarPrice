@@ -3,6 +3,7 @@
 
 Analyze second-hand car prices from the [Craigslist Used Cars Dataset](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data) to predict the price of used vehicles.
 
+---
 
 ## Steps
 
@@ -27,6 +28,8 @@ Analyze second-hand car prices from the [Craigslist Used Cars Dataset](https://w
 - **Evaluation**
   - Used R² score as metrics
   - Final model (Random Forest) achieved **~0.82 R²** on the test set
+
+---
 
 ## Deployment  
 
