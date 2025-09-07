@@ -1,5 +1,5 @@
 
-# 2nd Hand Car Price Prediction
+# 2nd Hand Car Price Prediction (US market)
 
 Analyze second-hand car prices from the [Craigslist Used Cars Dataset](https://www.kaggle.com/datasets/austinreese/craigslist-carstrucks-data) to predict the price of used vehicles.
 
@@ -28,19 +28,19 @@ Analyze second-hand car prices from the [Craigslist Used Cars Dataset](https://w
   - Used R² score as metrics
   - Final model (Random Forest) achieved **~0.82 R²** on the test set
 
-## Run the Model Locally in your Terminal 
-You will be asked to provide car details after following the instructions:
+## Deployment  
 
-**1. Clone the Repository**
-```bash
-git clone https://github.com/Marwa-AlHajriy/CarPrice.git
-cd CarPrice
-```
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
-```
-**3. Run prediction**
-```bash
-python predict.py
-```
+Deployed the model as a **Flask web app** using **Google Cloud Run**.  
+
+Steps:  
+1. Created a Flask API (`app.py`) to handle requests and predictions.  
+2. Uploaded the trained model (`used_car_price_model.pkl`) to GitHub releases due to large file. 
+3. Containerized the app using Docker `Dockerfile`.  
+4. Deployed with **Google Cloud Run**.  
+5. Created public **HTTPS endpoint**.  
+
+---
+
+## Run the site
+[Car Price Prediction App](https://carprice-1017464960956.europe-west2.run.app/)  
+
