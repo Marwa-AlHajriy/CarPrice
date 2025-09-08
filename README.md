@@ -45,5 +45,5 @@ Steps:
 ---
 
 ## Run the site
-[Car Price Prediction App](https://carprice-1017464960956.europe-west2.run.app/)  
+[Car Price Prediction](https://carprice-1017464960956.europe-west2.run.app/)  
 
